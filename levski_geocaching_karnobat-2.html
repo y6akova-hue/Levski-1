@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="bg">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#18253a">
+<title>Васил Левски – вечният герой | Геокешинг</title>
+<style>
+:root{--ink:#18253a;--gold:#c99a3b;--paper:#f7f0df;--red:#8f2e2e;--green:#2e6651;--muted:#69717d;--white:#fff;--shadow:0 8px 24px #0001}
+*{box-sizing:border-box} body{margin:0;background:#eee9dc;color:var(--ink);font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
+header{background:linear-gradient(135deg,#15243a,#2e4058);color:white;padding:20px 16px 18px;position:sticky;top:0;z-index:20;box-shadow:0 3px 14px #0003}
+header h1{font-family:Georgia,serif;font-size:24px;margin:0 0 5px}.subtitle{opacity:.85;font-size:13px}
+main{max-width:760px;margin:auto;padding:14px 12px 90px}.screen{display:none}.screen.active{display:block}
+.card{background:var(--paper);border:1px solid #cdbf9e;border-radius:18px;padding:17px;margin:12px 0;box-shadow:var(--shadow)}
+.hero{text-align:center;padding:25px 18px}.portrait{width:116px;height:116px;border-radius:50%;margin:0 auto 12px;background:#d6c5a0;border:5px solid var(--gold);display:grid;place-items:center;font-size:58px}
+h2,h3{font-family:Georgia,serif}.btn{width:100%;border:0;border-radius:13px;padding:14px 16px;margin:6px 0;background:var(--ink);color:#fff;font-weight:700;font-size:16px;cursor:pointer}.btn.gold{background:var(--gold);color:#18253a}.btn.green{background:var(--green)}.btn.red{background:var(--red)}.btn.light{background:#fff;color:var(--ink);border:1px solid #cfc7b5}
+input,select{width:100%;padding:13px;border-radius:11px;border:1px solid #bdb5a4;background:white;font-size:16px;margin:5px 0 10px}
+.tabs{display:grid;grid-template-columns:repeat(4,1fr);gap:5px;background:#dcd5c5;padding:5px;border-radius:14px;position:sticky;top:87px;z-index:10}.tab{border:0;background:transparent;padding:10px 4px;border-radius:10px;font-size:12px;font-weight:700;color:#364152}.tab.active{background:white;box-shadow:0 2px 8px #0001}
+.progress{height:12px;background:#d8d0bd;border-radius:10px;overflow:hidden}.progress i{display:block;height:100%;background:var(--gold);width:0}
+.tag{display:flex;gap:12px;align-items:center}.tagno{width:48px;height:48px;flex:0 0 48px;border-radius:50%;display:grid;place-items:center;background:var(--ink);color:#fff;font-weight:800}.tag.done .tagno{background:var(--green)}.tag.locked{opacity:.55}
+.small{font-size:13px;color:var(--muted)}.fact{border-left:4px solid var(--gold);padding:10px 12px;background:#fff9ed;border-radius:8px;margin:10px 0}
+.question{font-weight:800;margin-top:16px}.answer{display:none;margin-top:8px}.answer.show{display:block}.choice{display:block;text-align:left;background:#fff;border:1px solid #d2c9b7;color:var(--ink);font-weight:600}.choice.correct{background:#dcefe5;border-color:#6aa789}.choice.wrong{background:#f5dddd;border-color:#c76c6c}
+.badge{display:inline-block;padding:5px 9px;border-radius:20px;background:#e8dcc0;font-size:12px;font-weight:800;margin:3px}
+.bookitem{display:flex;gap:10px;padding:12px 0;border-bottom:1px solid #ddd2bb}.bookicon{font-size:30px}
+.mapbox{height:300px;background:#dfe6dc;border-radius:16px;position:relative;overflow:hidden;border:2px solid #8a9a87}
+.mapbox:before,.mapbox:after{content:"";position:absolute;background:#fff8;width:140%;height:8px;left:-20%;top:50%;transform:rotate(25deg)}.mapbox:after{top:62%;transform:rotate(-18deg)}
+.school{position:absolute;left:38%;top:37%;width:24%;height:25%;background:#b99765;border:4px solid #795f3c;border-radius:8px;display:grid;place-items:center;font-weight:900;color:white;font-size:11px;text-align:center;z-index:2}
+.pin{position:absolute;width:38px;height:38px;border-radius:50% 50% 50% 0;transform:rotate(-45deg);background:var(--red);color:#fff;display:grid;place-items:center;font-weight:900;box-shadow:0 3px 8px #0004;z-index:4}.pin span{transform:rotate(45deg)}.pin.done{background:var(--green)}.safe{position:absolute;left:8%;top:7%;width:84%;height:86%;border:3px dashed #2e6651;border-radius:48%;z-index:1}.me{position:absolute;width:16px;height:16px;border-radius:50%;background:#2879d0;border:3px solid white;z-index:5;box-shadow:0 0 0 8px #2879d033}
+.warn{background:#fff0d4;border:1px solid #d5a34d;padding:12px;border-radius:12px}.danger{background:#f8dfdf;border:1px solid #c56d6d;padding:12px;border-radius:12px}
+.admingrid{display:grid;grid-template-columns:1fr 1fr;gap:8px}.adminrow{background:white;padding:10px;border-radius:12px;border:1px solid #ddd}
+footer{position:fixed;bottom:0;left:0;right:0;background:#18253af2;color:#fff;padding:8px;text-align:center;font-size:11px;z-index:30}
+@media(min-width:700px){header h1{font-size:30px}.tabs{top:92px}.mapbox{height:390px}}
+</style>
+</head>
+<body>
+<header>
+  <h1>⚔️ Васил Левски – вечният герой</h1>
+  <div class="subtitle">Геокешинг мисия • СУ „Христо Ботев“, Карнобат</div>
+</header>
+
+<main>
+<section id="login" class="screen active">
+ <div class="card hero">
+  <div class="portrait">🧔🏻</div>
+  <h2>Тайният маршрут на Апостола</h2>
+  <p>Открий 8 исторически тага. Събери всички страници и отключи „Книгата на Левски“.</p>
+  <label><b>Име на участника</b></label>
+  <input id="name" maxlength="40" placeholder="Напиши своето име">
+  <button class="btn gold" onclick="startGame()">ВЛЕЗ В МИСИЯТА</button>
+  <button class="btn light" onclick="demoLogin()">ДЕМО РЕЖИМ – без GPS</button>
+  <p class="small">В демо режима можеш да разгледаш всички 8 тага, фактите, изображенията и колекцията.</p>
+ </div>
+</section>
+
+<section id="game" class="screen">
+ <div class="tabs">
+  <button class="tab active" onclick="showTab('route',this)">🧭 Маршрут</button>
+  <button class="tab" onclick="showTab('book',this)">📖 Книга</button>
+  <button class="tab" onclick="showTab('admin',this)">⚙️ Настройки</button>
+  <button class="tab" onclick="logout()">↩ Изход</button>
+ </div>
+
+ <div id="routeTab">
+  <div class="card">
+   <b id="welcome"></b>
+   <p class="small" id="modeText"></p>
+   <div class="progress"><i id="progress"></i></div>
+   <p><b><span id="count">0</span>/8</b> събрани исторически обекта</p>
+  </div>
+  <div id="safety" class="warn">🛡️ <b>Безопасността е преди всичко.</b> Играта е предназначена за училищния терен. Не пресичай улици, не се движи сам извън определената зона и следвай указанията на учителя.</div>
+  <div class="card">
+   <h3>Карта на мисията</h3>
+   <div class="mapbox" id="map">
+    <div class="safe"></div><div class="school">СУ<br>„Хр. Ботев“</div>
+   </div>
+   <button class="btn green" onclick="locateMe()">📍 Покажи моето местоположение</button>
+   <button class="btn light" onclick="openNext()">➡️ Към следващия достъпен таг</button>
+  </div>
+  <div id="tagList"></div>
+ </div>
+
+ <div id="bookTab" style="display:none">
+  <div class="card hero"><div class="portrait">📖</div><h2>Книга на Апостола</h2><p>Всяка открита мисия добавя страница към твоята колекция.</p></div>
+  <div id="bookList" class="card"></div>
+ </div>
+
+ <div id="adminTab" style="display:none">
+  <div class="card">
+   <h2>⚙️ Учителски режим</h2>
+   <p class="small">Настройките се пазят само на този телефон чрез localStorage.</p>
+   <button class="btn green" onclick="setCenterFromGPS()">📍 Задай центъра от текущия GPS</button>
+   <label>Безопасен радиус около центъра (метри)</label>
+   <input id="safeRadius" type="number" min="30" max="500" value="120" onchange="saveSettings()">
+   <div class="warn">За реална игра първо застанете в двора и задайте центъра. След това преместете отделните тагове от таблицата по-долу.</div>
+  </div>
+  <div class="card"><h3>Ръчна промяна на местоположението</h3><div id="adminTags"></div></div>
+  <div class="card">
+   <button class="btn light" onclick="resetPositions()">Върни примерните позиции</button>
+   <button class="btn red" onclick="resetProgress()">Нулирай събраните тагове</button>
+  </div>
+ </div>
+</section>
+
+<section id="detail" class="screen">
+ <div class="card">
+  <button class="btn light" onclick="backGame()">← Назад към маршрута</button>
+  <div id="detailContent"></div>
+ </div>
+</section>
+</main>
+<footer>Образователна игра • История + география + дигитални умения • Не използвай телефона по време на движение</footer>
+
+<script>
+const defaultCenter={lat:42.65,lng:26.98};
+const tags=[
+ {id:1,title:"Първата обиколка",icon:"🧭",year:"1868–1869",text:"След подготовка в Букурещ Левски предприема първата си обиколка из българските земи. Целта е да проучи настроенията и условията за бъдеща революционна дейност.",fact:"Първата обиколка започва през декември 1868 г. и приключва през март 1869 г.",q:"Коя е една от основните цели на първата обиколка?",opts:["Да събере данъци","Да проучи политическите настроения и условията в страната","Да стане учител в София"],ans:1,collect:"🧭 Страница 1 – Първата обиколка"},
+ {id:2,title:"Втората обиколка и комитетите",icon:"🔐",year:"1869",text:"Втората обиколка започва на 1 май 1869 г. и завършва на 26 август. Левски обикаля селища в Дунавския вилает и Южна България и търси надеждни съмишленици.",fact:"През тази обиколка се свързват с началото на революционни комитети в Плевен, Ловеч, Карлово, Сопот и други селища.",q:"Каква е ролята на комитетите?",opts:["Тайна организация на местни съмишленици","Военни училища","Търговски дружества"],ans:0,collect:"🔐 Страница 2 – Комитетската мрежа"},
+ {id:3,title:"Тайната организация",icon:"🕯️",year:"1870–1872",text:"През следващия етап Левски работи за изграждането на Вътрешната революционна организация. Идеята е борбата да бъде организирана вътре в българските земи чрез местни комитети и връзки между тях.",fact:"Тайната работа изисква явки, конспирация, доверени хора и внимателно предаване на сведения.",q:"Кое умение е особено важно за тайна мрежа?",opts:["Конспиративност и надеждни връзки","Шумна публичност","Отказ от всякаква организация"],ans:0,collect:"🕯️ Страница 3 – Тайната мрежа"},
+ {id:4,title:"Левски и Христо Ботев",icon:"✒️",year:"1871–1872",text:"Левски и Христо Ботев са сред водещите фигури на българското революционно движение. Те се срещат в Румъния и обсъждат посоките на освободителното дело.",fact:"Връзката между вътрешната организация на Левски и революционната емиграция е важна част от историята на движението.",q:"Къде се срещат Левски и Ботев в контекста на революционната емиграция?",opts:["В Румъния","В Египет","В Париж"],ans:0,collect:"✒️ Страница 4 – Левски и Ботев"},
+ {id:5,title:"Тефтерчето",icon:"📓",year:"1871–1872",text:"Левски води лично джобно тефтерче през последните две години от живота си. В него записва имена, сметки, бележки и други сведения.",fact:"При залавянето в Къкрина тефтерчето е скрито заедно с документи в самара на коня на Никола Цвятков и оцелява.",q:"Какво прави тефтерчето ценно за историците?",opts:["То е единствено стихосбирка","Съдържа сведения за личния му живот и революционната дейност","То е карта на Европа"],ans:1,collect:"📓 Страница 5 – Тефтерчето"},
+ {id:6,title:"Последният маршрут",icon:"🐎",year:"26 декември 1872",text:"Левски напуска Ловеч с Никола Цвятков. Архивът и личното тефтерче са скрити в самара. Двамата продължават към Къкрина.",fact:"Целта е документите да бъдат изнесени и Левски да продължи към Румъния.",q:"Къде нощуват Левски и Никола Цвятков?",opts:["В Къкринското ханче","В Търновския дворец","В манастир край София"],ans:0,collect:"🐎 Страница 6 – Последният маршрут"},
+ {id:7,title:"Залавянето в Къкрина",icon:"🚪",year:"27 декември 1872",text:"Рано сутринта ханчето е обградено от заптиета. При опит да избяга Левски е ранен и заловен.",fact:"Според Регионалния исторически музей – Ловеч залавянето става на 27 декември 1872 г. по стар стил.",q:"Какво се случва при опита за бягство?",opts:["Левски е ранен и заловен","Левски успява да стигне до Румъния","Ханчето е изоставено без арест"],ans:0,collect:"🚪 Страница 7 – Къкрина"},
+ {id:8,title:"Паметта остава",icon:"⭐",year:"1873 и днес",text:"След залавянето Левски е отведен на разпити, а смъртната присъда е потвърдена. Той е обесен край София през февруари 1873 г. Паметта за делото му продължава.",fact:"Историята на Левски е не само разказ за миналото, а повод да мислим за отговорност, свобода и общество.",q:"Кое послание най-добре обобщава мисията?",opts:["Историята трябва да се забрави","Свободата изисква лична отговорност и общо дело","Само един човек променя историята"],ans:1,collect:"⭐ Страница 8 – Паметта"},
+];
+let state=JSON.parse(localStorage.getItem("levskiGeo")||"null")||{name:"",demo:false,center:defaultCenter,safeRadius:120,found:[],positions:{}};
+if(!state.positions||Object.keys(state.positions).length===0){
+ tags.forEach((t,i)=>{state.positions[t.id]={lat:defaultCenter.lat+(i%4-1.5)*0.00035,lng:defaultCenter.lng+(Math.floor(i/4)-0.5)*0.00055}});
+}
+function save(){localStorage.setItem("levskiGeo",JSON.stringify(state))}
+function startGame(){let n=document.getElementById("name").value.trim();if(!n){alert("Моля, напиши име.");return}state.name=n;state.demo=false;save();enterGame()}
+function demoLogin(){state.name="Демо участник";state.demo=true;save();enterGame()}
+function enterGame(){document.getElementById("login").classList.remove("active");document.getElementById("game").classList.add("active");document.getElementById("welcome").textContent="Здравей, "+state.name+"!";document.getElementById("modeText").textContent=state.demo?"🧪 Демо режим: GPS проверките са изключени.":"📍 GPS режим: таговете се отключват според местоположението.";renderAll()}
+function logout(){document.getElementById("game").classList.remove("active");document.getElementById("login").classList.add("active")}
+function renderAll(){renderTags();renderBook();renderAdmin();document.getElementById("count").textContent=state.found.length;document.getElementById("progress").style.width=(state.found.length/8*100)+"%"}
+function renderTags(){
+ const box=document.getElementById("tagList");box.innerHTML="<div class='card'><h3>8 исторически тага</h3><p class='small'>В реалния режим всеки таг се отваря при достигане на зададената GPS зона.</p></div>";
+ tags.forEach(t=>{let found=state.found.includes(t.id);let locked=!state.demo&&!found;let d=document.createElement("div");d.className="card tag "+(found?"done ":"")+(locked?"locked":"");d.innerHTML=`<div class="tagno">${found?"✓":t.id}</div><div style="flex:1"><b>${t.icon} ${t.title}</b><div class="small">${t.year}</div><button class="btn ${found?"green":"light"}" onclick="openTag(${t.id})">${found||state.demo?"Отвори тага":"🔒 Изисква GPS"}</button></div>`;box.appendChild(d)})
+}
+function distance(a,b){const R=6371000,p=Math.PI/180,dLat=(b.lat-a.lat)*p,dLon=(b.lng-a.lng)*p;const x=Math.sin(dLat/2)**2+Math.cos(a.lat*p)*Math.cos(b.lat*p)*Math.sin(dLon/2)**2;return 2*R*Math.asin(Math.sqrt(x))}
+function openTag(id){
+ let t=tags.find(x=>x.id===id);
+ if(!state.demo&&!state.found.includes(id)){navigator.geolocation?.getCurrentPosition(pos=>{let me={lat:pos.coords.latitude,lng:pos.coords.longitude};let d=distance(me,state.positions[id]);let safe=distance(me,state.center);if(safe>Number(state.safeRadius)){outside();return}if(d>35){alert("Още си на около "+Math.round(d)+" м от тага. Приближи се до него.");return}unlock(id)},()=>alert("Не успях да получа GPS. Провери разрешението за местоположение."));return}
+ unlock(id)
+}
+function unlock(id){if(!state.found.includes(id)){state.found.push(id);save()}showDetail(id);renderAll()}
+function showDetail(id){let t=tags.find(x=>x.id===id);document.getElementById("game").classList.remove("active");document.getElementById("detail").classList.add("active");let c=document.getElementById("detailContent");c.innerHTML=`<div style="font-size:58px;text-align:center">${t.icon}</div><h2>${t.title}</h2><span class="badge">${t.year}</span><p>${t.text}</p><div class="fact"><b>🔎 Любопитен факт:</b><br>${t.fact}</div><div class="card" style="background:#fff"><div class="question">${t.q}</div>${t.opts.map((o,i)=>`<button class="btn choice" onclick="answer(${id},${i},this)">${String.fromCharCode(65+i)}. ${o}</button>`).join("")}<div id="feedback"></div></div><div class="card" style="text-align:center;font-size:28px">🖼️<br><span class="small">Историческа илюстрация на мисията<br>(офлайн графика)</span></div>`}
+function answer(id,i,el){let t=tags.find(x=>x.id===id),f=document.getElementById("feedback");document.querySelectorAll(".choice").forEach(b=>b.disabled=true);if(i===t.ans){el.classList.add("correct");f.innerHTML="<div class='fact'>✅ Вярно! Страницата е добавена в твоята книга.</div>"}else{el.classList.add("wrong");f.innerHTML="<div class='danger'>❌ Не точно. Върни се към текста и опитай отново.</div>";document.querySelectorAll(".choice")[t.ans].disabled=false;return}if(!state.found.includes(id)){state.found.push(id);save()}}
+function backGame(){document.getElementById("detail").classList.remove("active");document.getElementById("game").classList.add("active");renderAll()}
+function renderBook(){let b=document.getElementById("bookList");b.innerHTML="";if(!state.found.length){b.innerHTML="<p>Книгата още е празна. Открий първия таг.</p>";return}state.found.sort((a,b)=>a-b).forEach(id=>{let t=tags.find(x=>x.id===id);b.innerHTML+=`<div class="bookitem"><div class="bookicon">${t.icon}</div><div><b>${t.collect}</b><div class="small">${t.fact}</div></div></div>`})}
+function showTab(tab,btn){document.querySelectorAll(".tab").forEach(x=>x.classList.remove("active"));btn.classList.add("active");["route","book","admin"].forEach(x=>document.getElementById(x+"Tab").style.display=x===tab?"block":"none")}
+function openNext(){let id=tags.find(t=>!state.found.includes(t.id))?.id;if(id)openTag(id);else alert("Поздравления! Събра всички 8 страници.")}
+function locateMe(){if(state.demo){alert("В демо режима GPS е изключен.");return}navigator.geolocation?.getCurrentPosition(pos=>{let m=document.querySelector("#map .me");if(!m){m=document.createElement("div");m.className="me";document.getElementById("map").appendChild(m)}let dx=Math.max(4,Math.min(92,50+(pos.coords.longitude-state.center.lng)*100000));let dy=Math.max(5,Math.min(90,50-(pos.coords.latitude-state.center.lat)*100000));m.style.left=dx+"%";m.style.top=dy+"%";let safe=distance({lat:pos.coords.latitude,lng:pos.coords.longitude},state.center);if(safe>Number(state.safeRadius))outside();else document.getElementById("safety").className="warn",document.getElementById("safety").innerHTML="🛡️ <b>В безопасната зона си.</b> "+Math.round(safe)+" м от центъра.";},()=>alert("GPS не е достъпен."))}
+function outside(){document.getElementById("safety").className="danger";document.getElementById("safety").innerHTML="⚠️ <b>Напусна терена на играта.</b> Спри, върни се към определената зона и следвай указанията на учителя. <b>Безопасността е преди всичко.</b>";alert("Внимание: извън безопасната зона на играта.");}
+function setCenterFromGPS(){navigator.geolocation?.getCurrentPosition(p=>{state.center={lat:p.coords.latitude,lng:p.coords.longitude};save();alert("Центърът е зададен от текущото местоположение.");},()=>alert("Неуспешно получаване на GPS."))}
+function saveSettings(){state.safeRadius=Math.max(30,Math.min(500,Number(document.getElementById("safeRadius").value)||120));save()}
+function renderAdmin(){document.getElementById("safeRadius").value=state.safeRadius;let a=document.getElementById("adminTags");a.innerHTML="";tags.forEach(t=>{let p=state.positions[t.id];a.innerHTML+=`<div class="adminrow"><b>${t.id}. ${t.title}</b><div class="admingrid"><label>Lat<input id="lat${t.id}" type="number" step="0.000001" value="${p.lat}"></label><label>Lng<input id="lng${t.id}" type="number" step="0.000001" value="${p.lng}"></label></div><button class="btn light" onclick="savePos(${t.id})">Запази позицията</button></div>`})}
+function savePos(id){state.positions[id]={lat:Number(document.getElementById("lat"+id).value),lng:Number(document.getElementById("lng"+id).value)};save();alert("Позицията е запазена.");}
+function resetPositions(){if(!confirm("Върни примерните позиции?"))return;tags.forEach((t,i)=>state.positions[t.id]={lat:defaultCenter.lat+(i%4-1.5)*0.00035,lng:defaultCenter.lng+(Math.floor(i/4)-0.5)*0.00055});save();renderAdmin()}
+function resetProgress(){if(!confirm("Нулирай книгата за този телефон?"))return;state.found=[];save();renderAll()}
+window.addEventListener("beforeunload",save);
+</script>
+</body></html>
